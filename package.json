@@ -24,14 +24,14 @@
     ]
   },
   "scripts": {
-    "dev": "npm run clear && cross-env NODE_ENV=development  run-p dev:*",
+    "dev": "npm run clear && cross-env NODE_ENV=development run-p dev:*",
     "dev:restartPlugin": "esno scripts/restartPlugin.ts",
-    "dev:manifest": "esno scripts/manifest.ts",
+    "dev:prepare": "esno scripts/prepare.ts",
     "dev:web": "vite build --mode=development",
     "dev:js": "vite build --mode=development --config=vite.config.code.ts",
     "---------": "",
-    "build": "npm run clear && run-p build:*",
-    "build:manifest": "esno scripts/manifest.ts",
+    "build": "cross-env NODE_ENV=production run-s clear build:*",
+    "build:prepare": "esno scripts/prepare.ts",
     "build:web": "vite build",
     "build:js": "vite build --config=vite.config.code.ts",
     "----------": "",
