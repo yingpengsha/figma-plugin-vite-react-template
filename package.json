@@ -1,10 +1,10 @@
 {
-  "name": "ts-lib-template",
+  "name": "figma-plugin-vite-react-template",
   "version": "0.0.1",
   "license": "MIT",
   "author": "Pengsha Ying <yingfusheng@foxmail.com>",
-  "description": "😎 Awesome typescript library template",
-  "repository": "git@github.com:yingpengsha/ts-lib-template.git",
+  "description": "Quick start a Figma plugin using Vite and React.",
+  "repository": "git@github.com:yingpengsha/figma-plugin-vite-react-template.git",
   "publishConfig": {
     "access": "public"
   },
@@ -19,39 +19,60 @@
     "import": "./dist/index.mjs"
   },
   "lint-staged": {
-    "*.{js,ts,md,json,yml}": [
+    "*.{js,jsx,ts,tsx,json}": [
       "eslint --fix"
     ]
   },
   "scripts": {
-    "dev": "tsup --watch --sourcemap",
-    "build": "tsup",
-    "test": "jest --passWithNoTests --verbose false",
-    "lint": "eslint \"**/*.{js,ts,md,json,yml}\"",
-    "release": "bump --commit --push --tag && npm publish",
+    "dev": "npm run clear && cross-env NODE_ENV=development  run-p dev:*",
+    "dev:restartPlugin": "esno scripts/restartPlugin.ts",
+    "dev:manifest": "esno scripts/manifest.ts",
+    "dev:web": "vite build --mode=development",
+    "dev:js": "vite build --mode=development --config=vite.config.code.ts",
+    "---------": "",
+    "build": "npm run clear && run-p build:*",
+    "build:manifest": "esno scripts/manifest.ts",
+    "build:web": "vite build",
+    "build:js": "vite build --config=vite.config.code.ts",
+    "----------": "",
+    "lint": "eslint \"**/*.{js,jsx,ts,tsx,json}\"",
+    "clear": "rimraf plugin/**",
     "prepare": "husky install"
   },
+  "dependencies": {
+    "lodash-es": "^4.17.21",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
   "devDependencies": {
-    "@jsdevtools/version-bump-prompt": "^6.1.0",
-    "@types/jest": "^27.0.2",
+    "@figma/plugin-typings": "^1.39.1",
+    "@types/fs-extra": "^9.0.13",
+    "@types/lodash-es": "^4.17.5",
     "@types/node": "^16.10.2",
+    "@types/react": "^17.0.37",
+    "@types/react-dom": "^17.0.11",
     "@typescript-eslint/eslint-plugin": "^4.32.0",
     "@typescript-eslint/parser": "^4.32.0",
+    "@vitejs/plugin-react": "^1.1.0",
+    "chokidar": "^3.5.2",
+    "cross-env": "^7.0.3",
     "eslint": "^7.32.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-define-config": "^1.0.9",
     "eslint-plugin-import": "^2.24.2",
-    "eslint-plugin-jest": "^24.5.0",
     "eslint-plugin-json": "^3.1.0",
-    "eslint-plugin-markdown": "^2.2.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-react": "^7.27.1",
+    "esno": "0.10.0",
+    "fs-extra": "^10.0.0",
     "husky": "^7.0.2",
-    "jest": "^27.2.4",
+    "kolorist": "^1.5.0",
     "lint-staged": "^11.1.2",
-    "ts-jest": "^27.0.5",
-    "ts-node": "^10.2.1",
-    "tsup": "^5.2.1",
-    "typescript": "^4.4.3"
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.4.3",
+    "vite": "^2.6.14",
+    "vite-plugin-singlefile": "^0.5.1"
   }
 }

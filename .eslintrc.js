@@ -9,16 +9,20 @@ module.exports = {
   },
   extends: [
     'standard',
+    'plugin:react/recommended',
     'plugin:json/recommended',
-    'plugin:markdown/recommended',
-    'plugin:jest/recommended'
+    'plugin:react/jsx-runtime'
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
+    ecmaFeatures: {
+      jsx: true
+    },
     ecmaVersion: 12,
     sourceType: 'module'
   },
   plugins: [
+    'react',
     '@typescript-eslint'
   ],
   rules: {
@@ -28,6 +32,10 @@ module.exports = {
 
     // replace 'no-redeclare' with @typescript-eslint
     'no-redeclare': 'off',
-    '@typescript-eslint/no-redeclare': ['error']
+    '@typescript-eslint/no-redeclare': ['error'],
+
+    // note you must disable the base rule as it can report incorrect errors
+    'no-use-before-define': 'off',
+    '@typescript-eslint/no-use-before-define': ['error']
   }
 }

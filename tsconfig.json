@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    "target": "es6",
     "module": "esnext",
     "strict": true,
     "esModuleInterop": true,
@@ -8,16 +8,19 @@
     "noUnusedLocals": true,
     "noImplicitAny": true,
     "allowJs": true,
-    "checkJs": true,
     "resolveJsonModule": true,
-    "types": ["node", "jest"],
+    "jsx": "react-jsx",
     "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+    "typeRoots": [
+      "./node_modules/@types",
+      "./node_modules/@figma"
+    ]
   },
   "exclude": [
     "node_modules",
-    "dist"
+    "plugin"
   ]
 }
