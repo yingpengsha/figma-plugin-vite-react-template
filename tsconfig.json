@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "noUnusedLocals": true,
+    "noImplicitAny": true,
+    "allowJs": true,
+    "checkJs": true,
+    "resolveJsonModule": true,
+    "types": ["node", "jest"],
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
