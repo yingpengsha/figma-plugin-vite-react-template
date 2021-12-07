@@ -10,14 +10,14 @@ pnpm install
 
 1. Modify the name field in package.json to change the name of the plugin
 2. dependencies install
-3. open `Figma` > `Plugins` > `Development` > `import plugin from manifest...` > `project/plugin/manifest.json`
+3. open `Figma` > `Plugins` > `Development` > `import plugin from manifest...` > `your-project/plugin/manifest.json`
 4. `pnpm run dev`
 
 ## 🚀 Features
 
-- HMR: Support HMR(Hot Module Replacement) of Plugin
-- Vite: Bundle user interface and js code using ViteJs
-- React: Use ReactJs to write the user interface
+- **HMR**: Support HMR(Hot Module Replacement) of Plugin
+- **Vite**: Bundle user interface and js code using ViteJs
+- **React**: Use ReactJs to write the user interface
 
 ## 📄 License
 
