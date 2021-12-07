@@ -1,5 +1,18 @@
 # figma-plugin-vite-react-template
 
+## 📦 Install
+
+```bash
+pnpm install
+```
+
+## 🔨 Usage
+
+1. Modify the name field in package.json to change the name of the plugin
+2. dependencies install
+3. open `Figma` > `Plugins` > `Development` > `import plugin from manifest...` > `project/plugin/manifest.json`
+4. `pnpm run dev`
+
 ## 🚀 Features
 
 - HMR: Support HMR(Hot Module Replacement) of Plugin
