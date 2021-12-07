@@ -37,7 +37,8 @@
     "----------": "",
     "lint": "eslint \"**/*.{js,jsx,ts,tsx,json}\"",
     "clear": "rimraf plugin/**",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "postinstall": "npm run build"
   },
   "dependencies": {
     "lodash-es": "^4.17.21",
