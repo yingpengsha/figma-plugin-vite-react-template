@@ -7,7 +7,6 @@
 /.pnpm-debug.log
 
 # production
-/dist
 /plugin
 
 # misc
